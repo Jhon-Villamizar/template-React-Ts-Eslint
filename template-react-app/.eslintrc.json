@@ -1,0 +1,59 @@
+/* delete this line 
+"eslintConfig": {
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ]
+}*/
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint", //"test" is not defined
+        "react-hooks" //complements 
+    ],
+    "rules": {
+        "no-use-before-define": "off", //do not use before defining
+        "@typescript-eslint/no-use-before-define": ["error"], //do not use before defining
+        "react/jsx-filename-extension": ["warn", {"extensions": [".tsx"]} ], //react / jsx-filename-extension
+        "import/extensions": [ // cannot resolve the path to module './App'.
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "no-shadow": "off", //Enum' is already declared at the higher level.
+        "@typescript-eslint/no-shadow": ["error"], //Enum' is already declared at the higher level.
+        "max-len": ["warn", { "code": 80 }], //Maximum line code length
+        "react-hooks/rules-of-hooks": "error", //complements 
+        "react-hooks/exhaustive-deps": "warn", //complements 
+        "import/prefer-default-export": "off", //default export
+        "react/prop-types": "off", //default export
+        "arrow-body-style": ["error", "always"], //arrow in body
+        "quotes": [2, "single", "avoid-escape"], // quotes
+        "@typescript-eslint/no-explicit-any": "off" //no explicit return
+    },
+    "settings": { //cannot resolve the path to module './App'.
+        "import/resolver": {
+            "typescript": {}
+        }
+    }
+}

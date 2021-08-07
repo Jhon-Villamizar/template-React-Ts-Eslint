@@ -43,6 +43,35 @@ npm install node-sass
 > Note: Remember change all files .css by scss
 
 
+3 Install library required config EsLint
+```sh
+npm install eslint --save-dev
+```
+- init the config with
+```sh
+npx eslint --init
+```
+choose:
+- check syntax, find problems and apply code styling
+- JavaScript modules (import / export)
+- react
+- yes
+- browser
+- use a popular style guide
+- Airbnb:https://github.com/airbnb/javascript
+- JSON
+- yes
+
+execute eslint:
+- npx eslint src/*
+- npx eslint src/* --fix
+
+config error => cannot resolve the path to module './App'.
+```sh
+npm install eslint-import-resolver-typescript --save-dev
+```
+
+
 ## Development
 You can run development app with:
 ```sh
