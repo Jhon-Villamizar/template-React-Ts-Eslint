@@ -1,3 +1,6 @@
 *.css
 *.svg
 *.scss
+**/*.js
+node_modules
+build

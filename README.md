@@ -72,6 +72,20 @@ npm install eslint-import-resolver-typescript --save-dev
 ```
 
 
+4 install  Prettier and stylelint
+```sh
+npm i prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+npm i -D stylelint-scss
+```
+and create the file .prettier.config.js and .stylelintrc.json by configure the rules.
+this libraries help with the structure and rules in the code mainly in styles and html files
+for look the errors you can run:
+```sh
+npx prettier --check src/*
+```
+and create a script in package.json for run 'stylelint --ignore-path .gitignore --fix \"**/*.scss\"' 
+
+
 ## Development
 You can run development app with:
 ```sh

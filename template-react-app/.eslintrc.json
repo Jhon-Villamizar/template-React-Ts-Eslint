@@ -1,4 +1,4 @@
-/* delete this line 
+/* delete this line
 "eslintConfig": {
     "extends": [
         "react-app",
@@ -8,25 +8,32 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        // "prettier/@typescript-eslint", // prettier
+        "plugin:prettier/recommended" // prettier
     ],
+    "globals": { // prettier
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12,
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "plugins": [
         "react",
         "@typescript-eslint", //"test" is not defined
-        "react-hooks" //complements 
+        "react-hooks" //complements
     ],
     "rules": {
         "no-use-before-define": "off", //do not use before defining
@@ -43,13 +50,21 @@
         "no-shadow": "off", //Enum' is already declared at the higher level.
         "@typescript-eslint/no-shadow": ["error"], //Enum' is already declared at the higher level.
         "max-len": ["warn", { "code": 80 }], //Maximum line code length
-        "react-hooks/rules-of-hooks": "error", //complements 
-        "react-hooks/exhaustive-deps": "warn", //complements 
+        "react-hooks/rules-of-hooks": "error", //complements
+        "react-hooks/exhaustive-deps": "warn", //complements
         "import/prefer-default-export": "off", //default export
         "react/prop-types": "off", //default export
         "arrow-body-style": ["error", "always"], //arrow in body
         "quotes": [2, "single", "avoid-escape"], // quotes
-        "@typescript-eslint/no-explicit-any": "off" //no explicit return
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        // "@typescript-eslint/no-explicit-any": "off", //no explicit return
+        "prettier/prettier": "error", // prettier
+        "react/jsx-props-no-spreading": "off" // prettier
     },
     "settings": { //cannot resolve the path to module './App'.
         "import/resolver": {

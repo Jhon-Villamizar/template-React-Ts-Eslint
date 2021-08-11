@@ -21,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint": "npx eslint src/* --fix",
+    "prettier": "npx prettier --check src/*",
+    "lint:scss": "stylelint --ignore-path .gitignore --fix \"**/*.scss\"",
+    "checks": "npm run prettier && npm run lint:scss && npm run eslint"
   },
   "browserslist": {
     "production": [
@@ -40,10 +44,23 @@
     "@typescript-eslint/parser": "^4.29.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1"
+  },
+  "exports": {
+    "./2020/": "./2020/",
+    "./2020/*": "./2020/*",
+    "./helpers/": "./helpers/",
+    "./helpers/*": "./helpers/*"
   }
 }
