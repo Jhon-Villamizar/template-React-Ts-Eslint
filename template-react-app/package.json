@@ -26,7 +26,7 @@
     "prettier": "npx prettier --check src/*",
     "lint:scss": "stylelint --ignore-path .gitignore --fix \"**/*.scss\"",
     "checks": "npm run prettier && npm run lint:scss && npm run eslint",
-    "prepare": "husky install"
+    "prepare": "node -e \"if(require('fs').existsSync('.git')){process.exit(1)}\" || is-ci || husky install"
   },
   "browserslist": {
     "production": [
@@ -53,20 +53,10 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
-    "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.20.1"
-  },
-  "lint-staged": {
-    "**/*.+(js|jsx)": [
-      "eslint"
-    ],
-    "**/*.+(ts|tsx|js|jsx|json|css|md|mdx|html)": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
