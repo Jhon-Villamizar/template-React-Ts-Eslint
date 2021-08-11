@@ -25,7 +25,8 @@
     "eslint": "npx eslint src/* --fix",
     "prettier": "npx prettier --check src/*",
     "lint:scss": "stylelint --ignore-path .gitignore --fix \"**/*.scss\"",
-    "checks": "npm run prettier && npm run lint:scss && npm run eslint"
+    "checks": "npm run prettier && npm run lint:scss && npm run eslint",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -51,6 +52,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
@@ -62,5 +65,14 @@
     "./2020/*": "./2020/*",
     "./helpers/": "./helpers/",
     "./helpers/*": "./helpers/*"
+  },
+  "lint-staged": {
+    "**/*.+(js|jsx)": [
+      "eslint"
+    ],
+    "**/*.+(ts|tsx|js|jsx|json|css|md|mdx|html)": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

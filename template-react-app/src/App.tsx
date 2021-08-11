@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import './App.scss';
 
-const App: FC = (): ReactElement => {
+const App = () => {
   const newLogo = `
 https://upload.wikimedia.org/
 wikipedia/commons/thumb/4/47/React.svg/
