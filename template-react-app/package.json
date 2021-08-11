@@ -60,12 +60,6 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.20.1"
   },
-  "exports": {
-    "./2020/": "./2020/",
-    "./2020/*": "./2020/*",
-    "./helpers/": "./helpers/",
-    "./helpers/*": "./helpers/*"
-  },
   "lint-staged": {
     "**/*.+(js|jsx)": [
       "eslint"
